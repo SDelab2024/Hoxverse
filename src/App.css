@@ -1,0 +1,430 @@
+/* General styles for the app */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc; /* Light background for the app */
+  color: #333;
+  line-height: 1.6; /* Improve readability */
+}
+
+.App {
+  text-align: center;
+  padding-top: 50px; /* Add margin to move content down */
+}
+
+.App-header {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: hotpink; /* A nice pink color for header */
+}
+
+.App-header-1 {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: hotpink; /* A nice pink color for header */
+}
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #666;
+}
+
+.App-header p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+/* General navigation link styles */
+.navigation-links, .top-menu-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.navigation-links a, .top-menu-link a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: hotpink;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation-links a:hover, .top-menu-link a:hover {
+  background-color: #27ae60;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Welcome and Options styles */
+.App-header {
+  height: 100vh; /* Full viewport height for the Welcome section */
+}
+
+.Welcome {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  z-index: 1; /* Ensure it stays on top */
+  color: #333;
+  font-size: larger;
+}
+
+.Options {
+  display: none; /* Initially hidden */
+  padding: 20px;
+  text-align: center;
+}
+
+body.scrolled .Options {
+  display: block; /* Show the options when scrolled */
+}
+
+/* Canvas container */
+.canvas-container {
+  width: 100%; /* Increase width for larger canvas */
+  height: 100vh; /* Increase height for larger canvas */
+  margin: 10px auto; /* Add margin for spacing */
+  min-width: 300px; /* Ensure a minimum width */
+  min-height: 60vh; /* Ensure a minimum height */
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Button styles */
+.button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 0 10px; /* Adjust spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-button, .clear-all-button, .toggle-datasets-button {
+  background-color: hotpink;
+  color: white;
+}
+
+.clear-all-button {
+  background-color: #e74c3c;
+}
+
+.toggle-datasets-button {
+  background-color: #2ecc71;
+}
+
+.button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-button:hover {
+  background-color: #2980b9;
+}
+
+.clear-all-button:hover {
+  background-color: #c0392b;
+}
+
+.toggle-datasets-button:hover {
+  background-color: #27ae60;
+}
+
+/* Legend dropdown styles */
+.legend-dropdown {
+  position: relative;
+  display: inline-block;
+  border-radius: 12px; /* Slightly increased border radius */
+  padding: 10px; /* Added padding for a fluffier feel */
+  background-color: #ffffff; /* Light background for softness */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  transition: transform 0.2s ease; /* Add transition for hover effect */
+}
+
+.legend-dropdown:hover {
+  transform: translateY(-2px); /* Slight lift on hover for a fluffy effect */
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  display: none;
+  min-width: 300px; /* Minimum width to ensure color picker visibility */
+  max-height: 400px; /* Maximum height to ensure proper scrolling */
+  overflow-y: auto; /* Scroll if content overflows */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-content.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-container {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.datasets-container {
+  padding: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+/* Color Picker styles */
+.color-picker-container {
+  position: relative;
+}
+
+.color-picker-button {
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.color-picker-button:hover {
+  border-color: #3498db;
+}
+
+.color-picker-menu {
+  position: absolute;
+  top: 40px; /* Space between the button and the color picker */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-picker-menu > div {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Fixed navigation link styles */
+.navigation-link {
+  position: fixed; /* Fixed positioning to keep it at the bottom */
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  background-color: #ffffff; /* White background for visibility */
+  padding: 10px 15px; /* Padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000; /* Ensure it’s on top of other elements */
+}
+
+.navigation-link a {
+  text-decoration: none; /* Remove underline */
+  color: hotpink; /* Text color matching the theme */
+  font-size: 16px; /* Font size for readability */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.navigation-link a:hover {
+  color: #2980b9; /* Darker color on hover */
+}
+
+.scatterplot-container {
+  position: relative;
+  padding: 20px;
+}
+
+/* Add this to your existing App.css */
+
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Set default font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Welcome message styles */
+.Welcome h1 {
+  font-family: 'Lobster', cursive; /* Use Lobster for the welcome message */
+  font-size: 3rem; /* Increase font size */
+  color: hotpink; /* Change color if needed */
+  margin: 0; /* Remove margin */
+}
+
+/* Options section styles */
+.Options {
+  display: none; /* Hide options by default */
+  padding: 20px;
+  text-align: center;
+}
+
+.Options h1 {
+  font-size: 2.5rem; /* Increase font size for main heading */
+  color: #333; /* Change color for better visibility */
+}
+
+.Options h2 {
+  font-size: 1.8rem; /* Increase font size for subheading */
+  color: #666; /* Change color for contrast */
+}
+
+.navigation-links a {
+  font-size: 1.2rem; /* Increase font size for links */
+  color: white; /* Use consistent link color */
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.navigation-links a:hover {
+  color: #2980b9; /* Change color on hover */
+}
+
+/* Other existing styles remain the same... */
+
+.help {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  border-left: 4px solid #666;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.help .note {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.help h4 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.help .note br {
+  margin-bottom: 10px;
+}
+
+.help .note::before {
+  content: "🛈 "; /* Adds an icon for better UI */
+  font-size: 16px;
+  color: #666;
+}
+
+.about {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 28px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+}
+
+.team-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team-name {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.team-role {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.team-bio {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}

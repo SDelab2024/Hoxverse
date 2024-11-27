@@ -1,0 +1,54 @@
+// index.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import './App.css';
+import App from './App';
+import DNASpinner from './components/DNASpinner';
+
+const ScatterPlot = React.lazy(() => import('./components/ScatterPlot'));
+const ScatterPlot_Ranked = React.lazy(() => import('./components/Scatterplot_Ranked'));
+
+function HomePage() {
+  return (
+    <div className="HomePage">
+      <header className="App-header">
+        <h1>Welcome to HOXverse</h1>
+        <p>Select the type of scatter plot you want to view:</p>
+        <nav className="navigation-links">
+          <Link to="/unranked">Unranked Protein Scatter Plot</Link>
+          <Link to="/ranked">Ranked Protein Scatter Plot</Link>
+        </nav>
+      </header>
+    </div>
+  );
+}
+
+function IndexPage() {
+  return (
+    <Router>
+      <div className="IndexPage">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/unranked"
+            element={
+              <Suspense fallback={<DNASpinner />}>
+                <ScatterPlot activeDataset="Dataset 1" />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/ranked"
+            element={
+              <Suspense fallback={<DNASpinner />}>
+                <ScatterPlot_Ranked activeDataset="Dataset 1" />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default IndexPage;
